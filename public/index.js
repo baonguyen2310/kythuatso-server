@@ -830,7 +830,7 @@ const handleStart = () => {
     createGroupTrue();
     draw("black", "white");
   } else {
-    fetch("https://kythuatso-server-production.up.railway.app/freecode", {
+    fetch("https://stormy-outerwear-colt.cyclic.app/freecode", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

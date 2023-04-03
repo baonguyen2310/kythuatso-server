@@ -40,7 +40,7 @@ const freecodes = ["baoweb1", "baoweb2", "baoweb3", "baoweb4", "baoweb5",
     "baoweb16", "baoweb17", "baoweb18", "baoweb19", "baoweb20"
 ];
 
-app.use("/static", express.static("public"));
+app.use("/", express.static("public"));
 
 // app.get("/", async (req, res) => {
 //     for(let i = 0; i < freecodes.length; i++){
