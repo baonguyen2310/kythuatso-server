@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kỹ thuật số</title>
+    <link rel="stylesheet" href="./index.css" >
+</head>
+<body>
+    <header>
+        <h2>Made by Bảo Nguyễn Chí</h2>
+        <p>Mục đích: Học tập</p>
+        <p>Tuyên bố từ chối trách nhiệm nếu người dùng sử dụng sai mục đích</p>
+    </header>
+    <input id="freecode" placeholder="Nhập freecode">
+    <h3 id="remainTime">Số lượt miễn phí còn lại:</h3>
+    <h2 style="color: tomato">
+        Nhập hàm logic theo định dạng: 1,2,3,5 nghĩa là m1,m2,m3,m5 </br>
+    </h2>
+    <div class="question">
+        <h2>f(A,B,C,D) = Σ( </h2>
+        <input placeholder="1,2,3,5,..." id="question-input">
+        <h2>)</h2>
+        <button class="start-button" onclick="handleStart()">START</button>
+    </div>
+    <h2 id="logic-question">f(A,B,C,D) = Σ() </h2>
+    <hr>
+
+    <h2 style="color: tomato">Biểu diễn bằng đại số logic:</h2>
+    <div class="logic">
+        <h2>f(A,B,C,D) = </h2>
+        <h2 id="logic-text"></h3>
+    </div>
+    <hr>
+
+    <h2 style="color: tomato">Bảng chân trị:</h2>
+    <table class="true-table">
+        <tr class="true-table-header">
+          <th>STT</th>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>F</th>
+        </tr>
+        <tr class="true-table-row">
+            <td>0</td>
+            <td id="0A">0</td>
+            <td id="0B">0</td>
+            <td id="0C">0</td>
+            <td id="0D">0</td>
+            <td id="0F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>1</td>
+            <td id="1A">0</td>
+            <td id="1B">0</td>
+            <td id="1C">0</td>
+            <td id="1D">1</td>
+            <td id="1F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>2</td>
+            <td id="2A">0</td>
+            <td id="2B">0</td>
+            <td id="2C">1</td>
+            <td id="2D">0</td>
+            <td id="2F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>3</td>
+            <td id="3A">0</td>
+            <td id="3B">0</td>
+            <td id="3C">1</td>
+            <td id="3D">1</td>
+            <td id="3F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>4</td>
+            <td id="4A">0</td>
+            <td id="4B">1</td>
+            <td id="4C">0</td>
+            <td id="4D">0</td>
+            <td id="4F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>5</td>
+            <td id="5A">0</td>
+            <td id="5B">1</td>
+            <td id="5C">0</td>
+            <td id="5D">1</td>
+            <td id="5F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>6</td>
+            <td id="6A">0</td>
+            <td id="6B">1</td>
+            <td id="6C">1</td>
+            <td id="6D">0</td>
+            <td id="6F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>7</td>
+            <td id="7A">0</td>
+            <td id="7B">1</td>
+            <td id="7C">1</td>
+            <td id="7D">1</td>
+            <td id="7F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>8</td>
+            <td id="8A">1</td>
+            <td id="8B">0</td>
+            <td id="8C">0</td>
+            <td id="8D">0</td>
+            <td id="8F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>9</td>
+            <td id="9A">1</td>
+            <td id="9B">0</td>
+            <td id="9C">0</td>
+            <td id="9D">1</td>
+            <td id="9F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>10</td>
+            <td id="10A">1</td>
+            <td id="10B">0</td>
+            <td id="10C">1</td>
+            <td id="10D">0</td>
+            <td id="10F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>11</td>
+            <td id="11A">1</td>
+            <td id="11B">0</td>
+            <td id="11C">1</td>
+            <td id="11D">1</td>
+            <td id="11F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>12</td>
+            <td id="12A">1</td>
+            <td id="12B">1</td>
+            <td id="12C">0</td>
+            <td id="12D">0</td>
+            <td id="12F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>13</td>
+            <td id="13A">1</td>
+            <td id="13B">1</td>
+            <td id="13C">0</td>
+            <td id="13D">1</td>
+            <td id="13F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>14</td>
+            <td id="14A">1</td>
+            <td id="14B">1</td>
+            <td id="14C">1</td>
+            <td id="14D">0</td>
+            <td id="14F" class="F"></td>
+        </tr>
+        <tr class="true-table-row">
+            <td>15</td>
+            <td id="15A">1</td>
+            <td id="15B">1</td>
+            <td id="15C">1</td>
+            <td id="15D">1</td>
+            <td id="15F" class="F"></td>
+        </tr>
+        
+      </table>
+    <hr>
+
+    <h2 style="color: tomato">Bìa Các-nô:</h2>
+    <table class="cacno-table">
+        <tr>
+          <th>CD\AB</th>
+          <th>00</th>
+          <th>01</th>
+          <th>11</th>
+          <th>10</th>
+        </tr>
+        <tr>
+            <th>00</th>
+            <td id="m0" class="cacno-cell"><p>m0</p></td>
+            <td id="m4" class="cacno-cell"><p>m4</p></td>
+            <td id="m12" class="cacno-cell"><p>m12</p></td>
+            <td id="m8" class="cacno-cell"><p>m8</p></td>
+        </tr>
+        <tr>
+            <th>01</th>
+            <td id="m1" class="cacno-cell"><p>m1</p></td>
+            <td id="m5" class="cacno-cell"><p>m5</p></td>
+            <td id="m13" class="cacno-cell"><p>m13</p></td>
+            <td id="m9" class="cacno-cell"><p>m9</p></td>
+        </tr>
+        <tr>
+            <th>11</th>
+            <td id="m3" class="cacno-cell"><p>m3</p></td>
+            <td id="m7" class="cacno-cell"><p>m7</p></td>
+            <td id="m15" class="cacno-cell"><p>m15</p></td>
+            <td id="m11" class="cacno-cell"><p>m11</p></td>
+        </tr>
+        <tr>
+            <th>10</th>
+            <td id="m2" class="cacno-cell"><p>m2</p></td>
+            <td id="m6" class="cacno-cell"><p>m6</p></td>
+            <td id="m14" class="cacno-cell"><p>m14</p></td>
+            <td id="m10" class="cacno-cell"><p>m10</p></td>
+        </tr>
+    </table>
+    <hr>
+
+    <h2 style="color: tomato">Rút gọn:</h2>
+    <h2>F(A, B, C, D)</h2>
+    <h2 id="m-short-text"></h2>
+    <h2 id="short-text"></h2>
+    <input id="hardFixInput" placeholder="Nhập index cần hard fix (1index/time)">
+    <button id="hardFixButton" onclick="hardFix()">Fix</button>
+    <hr>
+
+    <h2 style="color: tomato">Vẽ mạch logic:</h2>
+    <input id="color" placeholder="color">
+    <input id="backgroundColor" placeholder="background color">
+    <button onclick="draw(document.getElementById('color').value, document.getElementById('backgroundColor').value)">Draw</button>
+    <canvas id="logic-canvas" width="1000px" height="1000px">
+
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+header {
+    color: white;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+input {
+    width: 50%;
+    height: 2rem;
+    font-size: 1.5rem;
+}
+
+button {
+    width: 30%;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    color:aliceblue;
+    background-color: #333;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+}
+
+.logic {
+    display: flex;
+    align-items: center;
+}
+
+.logic-output {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.true-table-header th {
+    font-size: 1.5rem;
+    padding: 10px;
+    color: blue;
+}
+
+.true-table-row th, .true-table-row td {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.F {
+    font-weight: bold;
+}
+
+.cacno-cell {
+    padding: 0 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.cacno-cell p {
+    color: black;
+    font-size: small;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+.short {
+    display: flex;
+    align-items: center;
+}
+
+#logic-canvas {
+    border: 1px solid #333;
+}

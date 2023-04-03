@@ -40,16 +40,18 @@ const freecodes = ["baoweb1", "baoweb2", "baoweb3", "baoweb4", "baoweb5",
     "baoweb16", "baoweb17", "baoweb18", "baoweb19", "baoweb20"
 ];
 
-app.get("/", async (req, res) => {
-    for(let i = 0; i < freecodes.length; i++){
-        const record = new freecodeModel({
-            freecode: freecodes[i],
-            device: "",
-            remainTimes: 20
-        })
-        //await record.save();
-    }
-});
+app.use(express.static('public'));
+
+// app.get("/", async (req, res) => {
+//     for(let i = 0; i < freecodes.length; i++){
+//         const record = new freecodeModel({
+//             freecode: freecodes[i],
+//             device: "",
+//             remainTimes: 20
+//         })
+//         await record.save();
+//     }
+// });
 
 const freecodeModel = mongoose.model("freecode", freecodeSchema);
 
