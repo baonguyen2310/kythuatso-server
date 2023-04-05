@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tự sinh code C#</title>
+    <link rel="stylesheet" href="./generatecsharp.css" >
+</head>
+<body>
+    <header>
+        <h2>Made by Bảo Nguyễn Chí</h2>
+        <p>Mục đích: Học tập</p>
+        <p>Tuyên bố từ chối trách nhiệm nếu người dùng sử dụng sai mục đích</p>
+    </header>
+    <nav class="navbar">
+        <a href="./index.html"><button>Kỹ thuật số</button></a>
+        <a href="./generatecsharp.html"><button>Tự sinh code C#</button></a>
+    </nav>
+    <h3>Nhập tên hệ thống (không dấu, không cách) ví dụ: Nhà ga thì nhập NHAGA</h3>
+    <input id="request-title" placeholder="NHAGA"/>
+    <h3>Nhập tên đối tượng cần quản lý (không dấu, không cách) ví dụ: Tàu hỏa thì nhập TAUHOA</h3>
+    <input id="request-object" placeholder="TAUHOA"/>
+    <h3>Nhập các thuộc tính của đối tượng và kiểu dữ liệu của nó, ví dụ: Mã tàu, thời gian xuất phát thì
+        nhập: string MaTau; DateTime ThoiGianXuatPhat;
+    </h3>
+    <input id="request-params" placeholder="string MaTau; DateTime ThoiGianXuatPhat;"/>
+    <h3 style="color: red">Lưu ý: kết thúc mỗi thuộc tính đều phải có dấu ;</h3>
+    <button onclick="handleStart()">START</button>
+    <button onclick="handleRun()">Chạy</button>
+    <button id="showOutput" onclick="handleConsole()">Console</button>
+    <div id="output"></div>
+    <div id="output-code"></div>
+
+    <script src="./generatecsharp.js"></script>
+</body>
+</html>
